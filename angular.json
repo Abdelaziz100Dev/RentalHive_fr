@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "RentalHiveFr": {
+    "firstDemo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rental-hive-fr",
+            "outputPath": "dist/first-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -27,10 +27,9 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
-
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
             ]
           },
           "configurations": {
@@ -64,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "RentalHiveFr:build:production"
+              "browserTarget": "firstDemo:build:production"
             },
             "development": {
-              "browserTarget": "RentalHiveFr:build:development"
+              "browserTarget": "firstDemo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RentalHiveFr:build"
+            "browserTarget": "firstDemo:build"
           }
         },
         "test": {
@@ -98,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

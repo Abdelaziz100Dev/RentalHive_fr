@@ -1,0 +1,74 @@
+{
+  "product": [
+    {
+      "id": 5,
+      "name": "Camera",
+      "checked": false
+    },
+    {
+      "id": 6,
+      "name": "Keyboard",
+      "checked": false
+    },
+    {
+      "id": 7,
+      "name": "Mouse",
+      "checked": false
+    },
+    {
+      "id": 8,
+      "name": "Printer",
+      "checked": false
+    },
+    {
+      "id": 9,
+      "name": "Tablet",
+      "checked": false
+    },
+    {
+      "id": 10,
+      "name": "Speaker",
+      "checked": false
+    },
+    {
+      "id": 11,
+      "name": "Laptop",
+      "checked": false
+    },
+    {
+      "id": 12,
+      "name": "Monitor",
+      "checked": false
+    },
+    {
+      "id": 13,
+      "name": "Gaming Console",
+      "checked": false
+    },
+    {
+      "id": 14,
+      "name": "Router",
+      "checked": false
+    },
+    {
+      "id": 15,
+      "name": "Fitness Tracker",
+      "checked": false
+    },
+    {
+      "id": 16,
+      "name": "Smartwatch",
+      "checked": false
+    },
+    {
+      "id": 17,
+      "name": "Projector",
+      "checked": false
+    },
+    {
+      "id": 18,
+      "name": "External Hard Drive",
+      "checked": false
+    }
+  ]
+}

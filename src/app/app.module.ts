@@ -9,7 +9,7 @@ import { TypeComponent } from './type/type.component';
 import { EquipmentComponent } from './equipment/equipment.component';
 
 @NgModule({
-  declarations: [
+  declarations:  [
     AppComponent,
     TypeComponent,
     EquipmentComponent

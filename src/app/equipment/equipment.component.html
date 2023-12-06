@@ -2,14 +2,53 @@
   <div class="card">
     <div class="card-body">
       <h3>Types</h3>
-     <!-- {{typeName}}
-      <div class="col-8">
-        <div class="d-flex" >
-          <input class="form-control me-2" type="text"  [(ngModel)]="typeName"  placeholder="entre name" >
-          <button class="btn btn-outline-success" (click)="saveType()"  >Add</button>
-        </div>
+       <div class="col-8">
+         <!-- your-component.component.html -->
 
-      </div>-->
+         <!-- your-component.component.html -->
+
+         <div class="container mt-3">
+           <form [formGroup]="equipmentForm" (ngSubmit)="saveEquipment()">
+             <div class="mb-3">
+               <label for="name" class="form-label">Name</label>
+               <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter name">
+               <div *ngIf="equipmentForm.get('name')?.hasError('required') && equipmentForm.get('name')?.touched" class="text-danger">
+                 Name is required
+               </div>
+             </div>
+
+             <div class="mb-3">
+               <label for="pricePerDay" class="form-label">Price Per Day</label>
+               <input type="number" class="form-control" id="pricePerDay" formControlName="pricePerDay" placeholder="Enter price per day">
+               <div *ngIf="equipmentForm.get('pricePerDay')?.hasError('required') && equipmentForm.get('pricePerDay')?.touched" class="text-danger">
+                 Price per day is required
+               </div>
+               <div *ngIf="equipmentForm.get('pricePerDay')?.hasError('min') && equipmentForm.get('pricePerDay')?.touched" class="text-danger">
+                 Price per day must be greater than or equal to 0
+               </div>
+             </div>
+
+             <div class="mb-3">
+               <label for="typeId" class="form-label">Type </label>
+               <select id="typeId" class="form-control" formControlName="typeId">
+                 <option selected disabled>Select type</option>
+                 <option *ngFor="let type of types | async" value="{{type.id}}">{{ type.name }}</option>
+               </select>
+               <!--<input type="number" class="form-control" id="typeId" formControlName="typeId" placeholder="Enter type ID">
+               <div *ngIf="equipmentForm.get('typeId')?.hasError('required') && equipmentForm.get('typeId')?.touched" class="text-danger">
+                 Type ID is required
+               </div>
+               <div *ngIf="equipmentForm.get('typeId')?.hasError('min') && equipmentForm.get('typeId')?.touched" class="text-danger">
+                 Type ID must be greater than or equal to 1
+               </div>-->
+             </div>
+
+             <button type="submit" class="btn btn-primary">Save</button>
+           </form>
+         </div>
+
+
+       </div>
       <table class="table">
         <thead>
         <tr>

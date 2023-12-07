@@ -3,12 +3,14 @@
     <div class="card-body">
       <h3>Types</h3>
        <div class="col-8">
-         <!-- your-component.component.html -->
-
-         <!-- your-component.component.html -->
 
          <div class="container mt-3">
            <form [formGroup]="equipmentForm" (ngSubmit)="saveEquipment()">
+             <div class="mb-3">
+               <label for="img" class="form-label">Image</label>
+               <input type="file" class="form-control" formControlName="img" id="img" (change)="onFileChange($event)" accept="image/*">
+             </div>
+
              <div class="mb-3">
                <label for="name" class="form-label">Name</label>
                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter name">
@@ -34,13 +36,7 @@
                  <option selected disabled>Select type</option>
                  <option *ngFor="let type of types | async" value="{{type.id}}">{{ type.name }}</option>
                </select>
-               <!--<input type="number" class="form-control" id="typeId" formControlName="typeId" placeholder="Enter type ID">
-               <div *ngIf="equipmentForm.get('typeId')?.hasError('required') && equipmentForm.get('typeId')?.touched" class="text-danger">
-                 Type ID is required
-               </div>
-               <div *ngIf="equipmentForm.get('typeId')?.hasError('min') && equipmentForm.get('typeId')?.touched" class="text-danger">
-                 Type ID must be greater than or equal to 1
-               </div>-->
+
              </div>
 
              <button type="submit" class="btn btn-primary">Save</button>
@@ -53,6 +49,7 @@
         <thead>
         <tr>
           <th>ID</th>
+          <th>mage</th>
           <th>Name</th>
           <th>created At</th>
           <th>type</th>
@@ -64,6 +61,7 @@
         <tbody>
         <tr *ngFor="let equipment of equipments | async">
           <td>{{ equipment.id }}</td>
+          <td><img src="https://rentalhive.s3.amazonaws.com/{{equipment.imag}}" height="50px" width="50px" alt="image"/></td>
           <td>{{ equipment.name }}</td>
           <td>{{ equipment.creationDate }}</td>
           <td>{{ equipment.type?.name }}</td>

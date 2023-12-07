@@ -22,10 +22,13 @@ export class EquipmentComponent implements OnInit {
               private typeService: TypeService) {}
   equipments!: Observable<Array<EquipmentModel>>;
   types!: Observable<Array<TypeModel>>;
+  selectedFile: File | null = null;
+
   ngOnInit(): void {
     this.getEquipments();
     this.types=this.typeService.getTypes();
     this.equipmentForm = this.formBuilder.group({
+      img: ['', [Validators.required]],
       name: ['', [Validators.required]],
       pricePerDay: [0, [Validators.required, Validators.min(0)]],
       typeId: [0, [Validators.required, Validators.min(1)]],
@@ -49,19 +52,31 @@ export class EquipmentComponent implements OnInit {
   }
 
   saveEquipment() {
-    const equipmentModel: EquipmentModelDto = {
-      name: this.equipmentForm.value.name,
-      pricePerDay: this.equipmentForm.value.pricePerDay,
-      typeId: parseInt(this.equipmentForm.value.typeId)
-    };
-    this.equipmentForm.reset();
-    console.log(equipmentModel);
-    this.equipmentService.saveEquipment(equipmentModel).subscribe({
+    const formData = new FormData();
+/*
+    formData.append('img', this.equipmentForm.get('img')?.value);
+*/
+    if (this.selectedFile) {
+      formData.append('img', this.selectedFile);
+    }
+    formData.append('name', this.equipmentForm.value.name);
+    formData.append('pricePerDay', this.equipmentForm.value.pricePerDay);
+    formData.append('typeId', this.equipmentForm.value.typeId);
+
+    this.equipmentService.saveEquipment(formData).subscribe({
       next: (data) => {
         this.getEquipments();
-        console.log(data)
+        console.log(data);
       },
       error: (err) => console.log(err)
-    })
+    });
+
+    this.equipmentForm.reset();
   }
+
+  onFileChange(event: any) {
+    this.selectedFile = event.target.files[0];
+
+  }
+
 }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {EquipmentModel} from "../../Model/equipment.model";
+import {EquipmentModelDto} from "../../Model/equipmentDto.model";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,9 @@ export class EquipmentService {
     return this.httpClient.get<Array<EquipmentModel>>(this._typeServiceUrl)
   }
 
-  public saveEquipment(equipment:EquipmentModel): Observable<EquipmentModel>{
-    return this.httpClient.post<EquipmentModel>(this._typeServiceUrl, equipment);
+  public saveEquipment(formData: FormData): Observable<EquipmentModelDto>{
+    console.log(formData.getAll("img"));
+    return this.httpClient.post<EquipmentModelDto>(this._typeServiceUrl, formData);
   }
 
   public deleteEquipment(equipment: EquipmentModel): Observable<EquipmentModel> {

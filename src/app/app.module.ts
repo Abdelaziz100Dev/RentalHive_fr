@@ -7,20 +7,22 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TypeComponent } from './type/type.component';
 import { EquipmentComponent } from './equipment/equipment.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
-  declarations: [
+  declarations:  [
     AppComponent,
     TypeComponent,
     EquipmentComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule,
+        NgOptimizedImage
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

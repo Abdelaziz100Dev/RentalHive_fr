@@ -3,7 +3,7 @@ import { EquipmentModel } from "./equipment.model";
 
 export class EquipmentDemand {
   constructor(
-    public id: number,
+    public id: number|null,
     public startDate: Date,
     public endDate: Date,
     public equipment: EquipmentModel,

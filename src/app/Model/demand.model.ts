@@ -10,8 +10,8 @@ enum demandStatus{
 export class Demand {
   constructor(
     public id: number,
-    public status: demandStatus,
-    public devis: Devis,
+    public status: demandStatus|null,
+    public devis: Devis|null,
     public equipmentDemands:EquipmentDemand[],
     public user: User,
   ){}

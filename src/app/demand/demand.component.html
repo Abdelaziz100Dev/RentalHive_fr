@@ -31,23 +31,25 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel1">Make Reservation</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button id="close-modal-btn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex flex-column align-content-around">
+        <form #myForm="ngForm" action="">
         <label for="equipment">Equipment</label>
-        <select class="form-control input-group"  name="equipment" id="">
-          <option value="{{equipment.id}}" *ngFor="let equipment of equipments$ | async">{{equipment.name}}</option>
+        <select [(ngModel)]="reservationToEquipments" class="form-control input-group"  name="equipment" id="" required>
+          <option  value="{{equipment.id}}" *ngFor="let equipment of equipments$ | async">{{equipment.name}}</option>
         </select>
         <br>
         <label for="startDate">Start Date</label>
-        <input class="form-control input-group" type="date" name="startDate" id="">
+        <input [(ngModel)]="startDate" class="form-control input-group" type="date" name="startDate" id="" required>
         <br>
         <label for="endDate">End Date</label>
-        <input class="form-control input-group"  type="date" name="endDate" id="">
+        <input [(ngModel)]="endDate" class="form-control input-group"  type="date" name="endDate" id="" required>
+      </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="saveReservation(myForm)">Save changes</button>
       </div>
     </div>
   </div>
@@ -62,10 +64,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <ul>
+          <li *ngFor="let reservaion of selectedDemand$|async" >{{ reservaion.equipment.name +" from "+reservaion.startDate +" to "+  reservaion.endDate}}</li>
+        </ul>
       </div>
     </div>
   </div>

@@ -10,7 +10,8 @@ export class AppComponent {
   actions: Array<any>=[
     {"title":"types","route":"/types",icon: "tags"},
     {"title":"equipments","route":"/equipments",icon: "plus-circle"},
-    {"title":"demands","route":"/demands",icon: "plus-circle"}
+    {"title":"demands","route":"/demands",icon: "plus-circle"},
+    {"title":"offers","route":"/offers",icon: "plus-circle"}
   ];
 
   currentAction: any;

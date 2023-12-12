@@ -11,12 +11,14 @@ import {NgOptimizedImage} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemandComponent } from './demand/demand.component';
 import { DemandService } from './services/demand/demand.service';
+import { OfferComponent } from './offer/offer.component';
 @NgModule({
   declarations:  [
     AppComponent,
     TypeComponent,
     EquipmentComponent,
-    DemandComponent
+    DemandComponent,
+    OfferComponent
   ],
     imports: [
         BrowserModule,

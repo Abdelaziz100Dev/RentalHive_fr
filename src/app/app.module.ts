@@ -8,12 +8,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TypeComponent } from './type/type.component';
 import { EquipmentComponent } from './equipment/equipment.component';
 import {NgOptimizedImage} from "@angular/common";
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DemandComponent } from './demand/demand.component';
+import { DemandService } from './services/demand/demand.service';
 @NgModule({
   declarations:  [
     AppComponent,
     TypeComponent,
-    EquipmentComponent
+    EquipmentComponent,
+    DemandComponent
   ],
     imports: [
         BrowserModule,
@@ -21,9 +24,10 @@ import {NgOptimizedImage} from "@angular/common";
         HttpClientModule,
         ReactiveFormsModule,
         FormsModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        BrowserAnimationsModule,
     ],
-  providers: [],
+  providers: [DemandService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

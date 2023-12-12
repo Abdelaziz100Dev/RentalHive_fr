@@ -9,7 +9,8 @@ export class AppComponent {
   title = 'firstDemo';
   actions: Array<any>=[
     {"title":"types","route":"/types",icon: "tags"},
-    {"title":"equipments","route":"/equipments",icon: "plus-circle"}
+    {"title":"equipments","route":"/equipments",icon: "plus-circle"},
+    {"title":"demands","route":"/demands",icon: "plus-circle"}
   ];
 
   currentAction: any;

@@ -27,4 +27,10 @@ export class OfferComponent implements OnInit{
       () => this.getOffers()
     )
   }
+
+  sendOffer(offer: Offer): void {
+    this.offerService.sendOffer(offer).subscribe(
+      () => this.getOffers()
+    )
+  }
 }

@@ -19,4 +19,8 @@ export class OfferService {
   public deleteOffer(offer: Offer): Observable<Offer> {
     return this.httpClient.delete<Offer>(this._offerServiceUrl+`/${offer.id}`);
   }
+
+  public sendOffer(offer: Offer): Observable<Offer> {
+    return this.httpClient.get<Offer>(this._offerServiceUrl+`/${offer.id}/send`);
+  }
 }

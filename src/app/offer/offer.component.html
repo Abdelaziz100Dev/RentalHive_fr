@@ -10,6 +10,7 @@
           <th>Start date</th>
           <th>End date</th>
           <th> </th>
+          <th> </th>
         </tr>
         </thead>
         <tbody>
@@ -18,6 +19,11 @@
           <td>{{ offer.devis.id }}</td>
           <td>{{ offer.startDate }}</td>
           <td>{{ offer.endDate }}</td>
+          <td>
+            <Button (click)="sendOffer(offer)" class="btn btn-outline-success">
+              send
+            </Button>
+          </td>
           <td>
             <Button (click)="deleteOffer(offer)" class="btn btn-outline-danger">
               delete

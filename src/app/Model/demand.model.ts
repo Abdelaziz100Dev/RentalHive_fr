@@ -1,4 +1,3 @@
-
 import { Devis } from './devis.model';
 import { EquipmentDemand } from './equipmentDemand.model';
 import { User } from './user.model';

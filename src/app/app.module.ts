@@ -8,14 +8,17 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TypeComponent } from './type/type.component';
 import { EquipmentComponent } from './equipment/equipment.component';
 import {NgOptimizedImage} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {DemandService} from "./services/demand/demand.service";
 // import {DemandComponent} from "./components/demand/demand.component";
 import {DevisComponent} from "./components/devis/devis.component";
 import { CreateDemandComponent } from './components/demand/create/create-demand.component';
 import { UpdateDemandComponent } from './components/demand/update/update-demand.component';
+import { OfferComponent } from './offer/offer.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemandComponent } from './demand/demand.component';
-import { DemandService } from './services/demand/demand.service';
+// import { DemandService } from './services/demand/demand.service';
 @NgModule({
   declarations:  [
     AppComponent,
@@ -24,7 +27,8 @@ import { DemandService } from './services/demand/demand.service';
     DemandComponent,
     DevisComponent,
     CreateDemandComponent,
-    UpdateDemandComponent
+    UpdateDemandComponent,
+    OfferComponent
   ],
     imports: [
         BrowserModule,

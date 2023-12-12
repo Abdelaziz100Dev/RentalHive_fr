@@ -35,16 +35,29 @@
       </div>
       <div class="modal-body d-flex flex-column align-content-around">
         <form #myForm="ngForm" action="">
-        <label >Equipment</label>
-        <select [(ngModel)]="reservationToEquipments" class="form-control input-group"  name="equipment"  required>
-          <option  value="{{equipment.id}}" *ngFor="let equipment of equipments$ | async">{{equipment.name}}</option>
-        </select>
-        <br>
-        <label >Start Date</label>
-        <input [(ngModel)]="startDate" class="form-control input-group" type="date" name="startDate"  required>
-        <br>
-        <label >End Date</label>
-        <input [(ngModel)]="endDate" class="form-control input-group"  type="date" name="endDate"  required>
+<!--<<<<<<< HEAD-->
+<!--        <label >Equipment</label>-->
+<!--        <select [(ngModel)]="reservationToEquipments" class="form-control input-group"  name="equipment"  required>-->
+<!--          <option  value="{{equipment.id}}" *ngFor="let equipment of equipments$ | async">{{equipment.name}}</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <label >Start Date</label>-->
+<!--        <input [(ngModel)]="startDate" class="form-control input-group" type="date" name="startDate"  required>-->
+<!--        <br>-->
+<!--        <label >End Date</label>-->
+<!--        <input [(ngModel)]="endDate" class="form-control input-group"  type="date" name="endDate"  required>-->
+<!--=======-->
+<!--        <label for="equipment">Equipment</label>-->
+<!--        <select [(ngModel)]="reservationToEquipments" class="form-control input-group"  name="equipment" id="" required>-->
+<!--          <option  value="{{equipment.id}}" *ngFor="let equipment of equipments$ | async">{{equipment.name}}</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <label for="startDate">Start Date</label>-->
+<!--        <input [(ngModel)]="startDate" class="form-control input-group" type="date" name="startDate" id="" required>-->
+<!--        <br>-->
+<!--        <label for="endDate">End Date</label>-->
+<!--        <input [(ngModel)]="endDate" class="form-control input-group"  type="date" name="endDate" id="" required>-->
+<!--&gt;>>>>>> 11bd4ea19b40e6f115373f2f9c773aa940bbb2b6-->
       </form>
       </div>
       <div class="modal-footer">

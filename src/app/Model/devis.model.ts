@@ -1,5 +1,5 @@
-
 import { Offer } from "./offer.model";
+
 
 export class Devis{
     constructor(
@@ -18,4 +18,3 @@ export  class DevisModel{
               public date:Date) {
   }
 }
-

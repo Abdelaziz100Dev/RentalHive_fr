@@ -30,7 +30,7 @@ export class DevisService {
     return this.http.patch<DevisModel>(this.URL+"/"+devis.id,devis);
   }
 
-  public saveDevis(devis: { date: any; price: any; demand_id: any }): Observable<DevisModel> {
+  public saveDevis(devis: any): Observable<DevisModel> {
     return this.http.post<DevisModel>(this.URL,devis);
   }
 }

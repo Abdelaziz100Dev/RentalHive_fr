@@ -14,7 +14,7 @@ export class AppComponent {
     {"title":"demands","route":"/demands",icon: "plus-circle"},
     {"title":"devis","route":"/devis",icon: "plus-circle"},
     {"title":"types","route":"/types",icon: "tags"},
-    {"title":"equipments","route":"/equipments",icon: "plus-circle"}
+    {"title":"equipments","route":"/equipments",icon: "plus-circle"},
   ];
 
   currentAction: any;

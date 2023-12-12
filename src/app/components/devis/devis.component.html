@@ -9,14 +9,6 @@
           <form [formGroup]="devisForm" (ngSubmit)="saveDevis()">
 
             <div class="mb-3">
-              <label for="date" class="form-label">Date</label>
-              <input type="date"  class="form-control" id="date" formControlName="date" placeholder="Enter date">
-              <div *ngIf="devisForm.get('date')?.hasError('required') && devisForm.get('date')?.touched" class="text-danger">
-                date is required
-              </div>
-            </div>
-
-            <div class="mb-3">
               <label for="price" class="form-label">Price</label>
               <input type="number"  class="form-control" id="price" formControlName="price" placeholder="Enter price">
               <div *ngIf="devisForm.get('price')?.hasError('required') && devisForm.get('price')?.touched" class="text-danger">
@@ -31,10 +23,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="demandUserName" class="form-label">User name done the demand</label>
-                <select id="demandUserName" class="form-control" formControlName="demandUserName">
+                <label for="demandid" class="form-label">User name done the demand</label>
+                <select id="demandid" class="form-control" formControlName="demandid">
                   <option selected="selected" > Select Demand</option>
-                  <option *ngFor="let demand of userWithDemand" [ngValue]="devisForm" value="{{demand.id}}">{{ demand.user?.name }}</option>
+                  <option *ngFor="let demand of userWithDemand"  value="{{demand.id}}">{{ demand.user?.name }}</option>
                 </select>
                 <div *ngIf="devisForm.get('demandUserName')?.hasError('required') && devisForm.get('demandUserName')?.touched" class="text-danger">
                 required to select

@@ -1,11 +1,12 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {DevisService} from "../../services/devis/devis.service";
 import {HttpClient} from "@angular/common/http";
 import {DemandModel} from "../../Model/demand.model";
 import {DevisModel} from "../../Model/devis.model";
 import {DemandService} from "../../services/demand/demand.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {UserModel} from "../../Model/User.model";
+import {UserModel} from "../../Model/user.model";
+import {DevisDto} from "../../dto/DevisDto";
 // import * as console from "console";
 
 @Component({
@@ -13,7 +14,7 @@ import {UserModel} from "../../Model/User.model";
   templateUrl: './devis.component.html',
   styleUrls: ['./devis.component.css']
 })
-export class DevisComponent {
+export class DevisComponent implements OnInit{
   devisForm!: FormGroup;
   devis$!:Array<DevisModel>;
   userWithDemand:DemandModel[]= [];
@@ -33,7 +34,7 @@ export class DevisComponent {
       id: [null],
       date: ['', [Validators.required]],
       price: [0, [Validators.required, Validators.min(0),Validators.max(10)]],
-      demandUserName: [ [Validators.required]],
+      demandid: [ [Validators.required]],
     });
   }
 
@@ -78,27 +79,28 @@ export class DevisComponent {
   }
 
   saveDevis() {
-    const formData = new FormData();
+    // const formData = new FormData();
 
-    formData.append('date', this.devisForm.value.date);
-    formData.append('price', this.devisForm.value.price);
-    formData.append('demandUserName', this.devisForm.value.demandUserName);
+    // formData.append('date', this.devisForm.value.date);
+    // formData.append('price', this.devisForm.value.price);
+    // formData.append('demand_id', this.devisForm.value.demandid);
 
+    let myDevis:DevisDto = new DevisDto(this.devisForm.value.price,Number(this.devisForm.value.demandid));
     // Convert form values to JSON
-    console.log(JSON.stringify(this.devisForm.value));
-    const formJson = {
-        date: this.devisForm.value.date,
-        price: this.devisForm.value.price,
-        demand_id: this.devisForm.value.demandUserName,
+    console.log(myDevis);
+    // const formJson = {
+    //     // date: this.devisForm.value.date,
+    //     price: this.devisForm.value.price,
+    //     demand_id: this.devisForm.value.demandUserName,
+    //
+    // };
 
-    };
-
-    this.devisService.saveDevis(formJson).subscribe({
+    this.devisService.saveDevis(myDevis ).subscribe({
       next: (data) => {
-        this.getDemands();
-        console.log(data);
-      },
-      error: (err) => console.log(err)
+        this.ngOnInit();
+
+        // console.log(data);
+      }
     });
 
     this.devisForm.reset();

@@ -8,12 +8,20 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TypeComponent } from './type/type.component';
 import { EquipmentComponent } from './equipment/equipment.component';
 import {NgOptimizedImage} from "@angular/common";
+import {DemandComponent} from "./components/demand/demand.component";
+import {DevisComponent} from "./components/devis/devis.component";
+import { CreateDemandComponent } from './components/demand/create/create-demand.component';
+import { UpdateDemandComponent } from './components/demand/update/update-demand.component';
 
 @NgModule({
   declarations:  [
     AppComponent,
     TypeComponent,
-    EquipmentComponent
+    EquipmentComponent,
+    DemandComponent,
+    DevisComponent,
+    CreateDemandComponent,
+    UpdateDemandComponent
   ],
     imports: [
         BrowserModule,

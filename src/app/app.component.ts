@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'firstDemo';
   actions: Array<any>=[
+    {"title":"home","route":"/home",icon: "house"},
+    {"title":"products","route":"/products",icon: "arrow-down-up"},
+    {"title":"new products","route":"/new-products",icon: "plus-circle"},
+    {"title":"demands","route":"/demands",icon: "plus-circle"},
+    {"title":"devis","route":"/devis",icon: "plus-circle"},
     {"title":"types","route":"/types",icon: "tags"},
     {"title":"equipments","route":"/equipments",icon: "plus-circle"}
   ];

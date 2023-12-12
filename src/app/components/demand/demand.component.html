@@ -1,0 +1,35 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      <!--<h3>demands! {{demands[0].id}}</h3>-->
+<!--      {{console.log(demands)}}-->
+      <!-- Display products in a Bootstrap table -->
+      <table class="table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let demand of demands">
+          <td>{{ demand.id }}</td>
+          <td>{{ demand.status }}</td>
+          <td>
+            <Button (click)="handleCheck(demand)" class="btn btn-outline-success">
+              <i [class]="demand.checked?'bi bi-check': 'bi bi-circle'"></i>
+            </Button>
+          </td>
+          <td>
+            <Button (click)="deleteDemand(demand)" class="btn btn-outline-danger">
+              <i class="bi bi-trash"></i>
+            </Button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
